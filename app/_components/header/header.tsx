@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeaderNavButtons from "./headerNavButtons";
+import { Menu } from "lucide-react";
 
 export default function Header() {
   return (
@@ -12,7 +13,7 @@ export default function Header() {
         </ul>
         <span className="md:hidden navbar-end">
           <details className="dropdown">
-            <summary className="btn btn-ghost">hamburguer</summary>
+            <summary className="btn btn-ghost active:bg-transparent focus:bg-transparent focus:border-0 hover:bg-transparent hover:border-0"><Menu/></summary>
             <ul className="text-xs tracking-widest menu dropdown-content fixed left-0 w-screen gap-2 rounded-none z-1 shadow-sm p-2">
               <HeaderNavButtons />
             </ul>
