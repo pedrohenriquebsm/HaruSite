@@ -86,15 +86,6 @@
   root.setAttribute("data-lang", lang);
   root.lang = lang === "en" ? "en" : "pt-BR";
 
-  if (location.hash && location.hash.length > 1) {
-    try {
-      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-    } catch (_) {
-      /* ignore */
-    }
-    window.scrollTo(0, 0);
-  }
-
   if (lang === "en") {
     const path = String(location.pathname || location.href).toLowerCase();
     if (path.indexOf("microplasticos") >= 0) {

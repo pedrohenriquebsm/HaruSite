@@ -280,8 +280,6 @@
     const sum = qs("cartSum");
     if (!list) return;
     list.innerHTML = "";
-    const drawer = qs("cartDrawer");
-    if (drawer) drawer.classList.toggle("has-items", cart.length > 0);
     if (!cart.length) {
       if (vacant) vacant.hidden = false;
       list.hidden = true;
@@ -391,8 +389,8 @@
       '<div class="cart-overlay" id="cartOverlay" hidden></div>' +
       '<aside class="cart-drawer" id="cartDrawer" hidden tabindex="-1" aria-labelledby="cartTitle">' +
       '<header class="cart-drawer__head">' +
-      '<h2 id="cartTitle" data-i18n="cart.title">Cesta</h2>' +
-      '<button type="button" class="cart-drawer__close" id="cartClose" data-i18n-aria="cart.close" aria-label="Fechar a cesta">×</button>' +
+      '<h2 id="cartTitle" data-i18n="cart.title">Sacola</h2>' +
+      '<button type="button" class="cart-drawer__close" id="cartClose" data-i18n-aria="cart.close" aria-label="Fechar a sacola">×</button>' +
       "</header>" +
       '<div id="shopCartView">' +
       '<div class="cart-vacant" id="cartVacant">' +
@@ -476,7 +474,7 @@
       '<p class="check-step__title" data-i18n="check.saved">Pedido guardado neste aparelho</p>' +
       '<p class="product__block-lead" data-i18n="check.stub">O gateway ainda não está ligado. O esqueleto do pedido ficou salvo para o programador.</p>' +
       "</fieldset>" +
-      '<button type="button" class="cart-back" id="checkBack" data-i18n="check.back">Voltar à cesta</button>' +
+      '<button type="button" class="cart-back" id="checkBack" data-i18n="check.back">Voltar à sacola</button>' +
       "</form>" +
       "</div>" +
       "</aside>";

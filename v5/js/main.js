@@ -27,6 +27,7 @@
       "p1.bristle": "Crina de cavalo, esterilizada a vapor",
       "p1.care": "Secar em pé, cerdas para cima. Não deixar de molho.",
       "p1.animals": "Bem tratados. Crina coletada com cuidado, sem ferir o animal.",
+      "p1.anvisa": "Aprovado pela ANVISA",
       "p1.docTitle": "HARU — Escova de bambu",
       "p1.docDesc":
         "Escova de bambu HARU com cerdas de crina de cavalo. Sem nylon. Sem plástico.",
@@ -41,6 +42,7 @@
       "p2.bristle": "Crina de cavalo, esterilizada a vapor",
       "p2.care": "Secar em pé, cada uma no ar. Não deixar de molho.",
       "p2.animals": "Bem tratados. Crina coletada com cuidado, sem ferir o animal.",
+      "p2.anvisa": "Aprovado pela ANVISA",
       "p2.docTitle": "HARU — Kit de duas",
       "p2.docDesc":
         "Kit HARU de duas escovas de bambu com cerdas de crina de cavalo.",
@@ -66,6 +68,7 @@
       "spec.care": "Uso",
       "spec.stand": "Forma",
       "spec.animals": "Cavalos",
+      "spec.anvisa": "ANVISA",
       "p3.specBristle": "Apoio",
       "trust.horses":
         "Cavalos bem tratados. A crina é coletada com cuidado, sem ferir o animal.",
@@ -73,6 +76,7 @@
       "trust.steam": "Cerdas esterilizadas a vapor.",
       "trust.line":
         "Cavalos bem tratados. Bambu selecionado. Cerdas esterilizadas a vapor.",
+      "trust.anvisa": "Aprovado pela ANVISA.",
       "product.pay": "Pagamento",
       "product.payLead":
         "PIX, cartão ou Apple Pay. A loja ainda está nascendo — o pedido agora se conclui por e-mail.",
@@ -85,10 +89,10 @@
       "product.boleto": "Boleto",
       "product.boletoMeta": "Compensação em alguns dias úteis.",
       "product.order": "Finalizar a compra",
-      "cart.add": "Adicionar à cesta",
-      "cart.title": "Cesta",
-      "cart.open": "Abrir a cesta",
-      "cart.close": "Fechar a cesta",
+      "cart.add": "Adicionar à sacola",
+      "cart.title": "Sacola",
+      "cart.open": "Abrir a sacola",
+      "cart.close": "Fechar a sacola",
       "cart.empty": "Ainda vazia.",
       "cart.emptyLead": "O essencial cabe em pouco. A coleção espera.",
       "cart.shop": "Ver a coleção",
@@ -115,7 +119,7 @@
       "check.district": "Bairro",
       "check.city": "Cidade",
       "check.uf": "UF",
-      "check.back": "Voltar à cesta",
+      "check.back": "Voltar à sacola",
       "check.continue": "Continuar",
       "check.pay": "Pagar",
       "check.payHint":
@@ -167,17 +171,16 @@
       "contact.text":
         "A loja ainda está nascendo. Se quiser a coleção, uma parceria ou só conversar sobre o hábito — escreva.",
       "contact.ways": "Contatos",
-      "contact.email": "E-mail",
-      "contact.emailAria": "E-mail: contato@haru.natural",
       "contact.wa": "WhatsApp",
       "matter.kicker": "O hábito",
       "matter.title": "Entenda como os microplásticos fazem mal à saúde.",
       "matter.lead":
-        "Escovas de plástico contaminam o seu corpo. Contaminam a terra. Um objeto íntimo não deveria deixar rastro por séculos.",
+        "Escovas de nylon soltam partículas de plástico na boca. Depois, o mesmo objeto permanece no planeta por séculos.",
       "matter.cta": "Saber mais",
       "letter.kicker": "Cartas",
-      "letter.title": "Pesquisas e o essencial, no e‑mail.",
-      "letter.text": "Estudos sobre microplásticos e avisos da coleção.",
+      "letter.title": "Pesquisas e o essencial, no e-mail.",
+      "letter.text":
+        "Estudos sobre microplásticos e avisos da coleção — só o que importa, quando houver novidade.",
       "letter.label": "Seu e-mail",
       "letter.placeholder": "seu@email.com",
       "letter.submit": "Assinar",
@@ -334,6 +337,7 @@
       "p1.bristle": "Horsehair, steam-sterilized",
       "p1.care": "Stand it upright, bristles up. Don’t soak it.",
       "p1.animals": "Well treated. Hair collected with care, without harming the animal.",
+      "p1.anvisa": "Approved by ANVISA",
       "p1.docTitle": "HARU — Bamboo brush",
       "p1.docDesc":
         "HARU bamboo toothbrush with horsehair bristles. No nylon. No plastic.",
@@ -348,6 +352,7 @@
       "p2.bristle": "Horsehair, steam-sterilized",
       "p2.care": "Stand each one upright, in open air. Don’t soak them.",
       "p2.animals": "Well treated. Hair collected with care, without harming the animal.",
+      "p2.anvisa": "Approved by ANVISA",
       "p2.docTitle": "HARU — Set of two",
       "p2.docDesc":
         "HARU set of two bamboo toothbrushes with horsehair bristles.",
@@ -373,6 +378,7 @@
       "spec.care": "Use",
       "spec.stand": "Form",
       "spec.animals": "Horses",
+      "spec.anvisa": "ANVISA",
       "p3.specBristle": "Hold",
       "trust.horses":
         "Horses are well treated. The hair is collected with care, without harming the animal.",
@@ -380,6 +386,7 @@
       "trust.steam": "Bristles steam-sterilized.",
       "trust.line":
         "Horses well treated. Selected bamboo. Bristles steam-sterilized.",
+      "trust.anvisa": "Approved by ANVISA.",
       "product.pay": "Payment",
       "product.payLead":
         "PIX, card, or Apple Pay. The shop is just beginning — for now, the order is completed by email.",
@@ -392,10 +399,10 @@
       "product.boleto": "Boleto",
       "product.boletoMeta": "Clears in a few business days.",
       "product.order": "Complete purchase",
-      "cart.add": "Add to basket",
-      "cart.title": "Basket",
-      "cart.open": "Open the basket",
-      "cart.close": "Close the basket",
+      "cart.add": "Add to bag",
+      "cart.title": "Bag",
+      "cart.open": "Open the bag",
+      "cart.close": "Close the bag",
       "cart.empty": "Empty, for now.",
       "cart.emptyLead": "Little is needed. The collection is waiting.",
       "cart.shop": "See the collection",
@@ -422,7 +429,7 @@
       "check.district": "District",
       "check.city": "City",
       "check.uf": "State",
-      "check.back": "Back to the basket",
+      "check.back": "Back to bag",
       "check.continue": "Continue",
       "check.pay": "Pay",
       "check.payHint":
@@ -474,17 +481,16 @@
       "contact.text":
         "The shop is just beginning. For the collection, a partnership, or a conversation — write.",
       "contact.ways": "Contact",
-      "contact.email": "Email",
-      "contact.emailAria": "Email: contato@haru.natural",
       "contact.wa": "WhatsApp",
       "matter.kicker": "The habit",
       "matter.title": "How microplastics from nylon brushes harm the body.",
       "matter.lead":
-        "Plastic brushes contaminate the body. They contaminate the earth. An intimate object should not leave a trace for centuries.",
+        "Nylon toothbrushes shed plastic particles in the mouth. Then the same object stays on the planet for centuries.",
       "matter.cta": "Read more",
       "letter.kicker": "Letters",
       "letter.title": "Research and the essential, by email.",
-      "letter.text": "Notes on microplastics and word from the collection.",
+      "letter.text":
+        "Notes on microplastics and word from the collection — only what matters, when there is news.",
       "letter.label": "Your email",
       "letter.placeholder": "you@email.com",
       "letter.submit": "Subscribe",
@@ -1073,115 +1079,6 @@
     link.addEventListener("click", () => setNavOpen(false));
   });
 
-  const remPx = () => parseFloat(getComputedStyle(root).fontSize) || 16;
-
-  const navOffset = () => {
-    const raw = String(getComputedStyle(root).getPropertyValue("--nav-h") || "").trim();
-    const n = parseFloat(raw);
-    if (!Number.isFinite(n)) return 72;
-    return raw.indexOf("rem") >= 0 ? n * remPx() : n;
-  };
-
-  const yOfHash = (hash) => {
-    const id = String(hash || "").replace(/^#/, "");
-    if (!id) return null;
-    const el = document.getElementById(id);
-    if (!el) return null;
-    const top = el.getBoundingClientRect().top + (window.pageYOffset || window.scrollY || 0);
-    return Math.max(0, top - navOffset() - 6);
-  };
-
-  const scrollToHash = (hash, instant) => {
-    const y = yOfHash(hash);
-    if (y == null) return false;
-    const lenis = window.haruLenis;
-    if (lenis && typeof lenis.scrollTo === "function") {
-      lenis.scrollTo(y, { duration: instant ? 0 : 1.05, immediate: !!instant });
-    } else if (instant) {
-      window.scrollTo(0, y);
-    } else {
-      try {
-        window.scrollTo({ top: y, left: 0, behavior: "smooth" });
-      } catch (_) {
-        window.scrollTo(0, y);
-      }
-    }
-    return true;
-  };
-
-  const goHashWhenReady = (hash) => {
-    if (!hash || hash === "#") return;
-    const run = (instant) => {
-      try {
-        if (typeof ScrollTrigger !== "undefined" && ScrollTrigger.refresh) {
-          ScrollTrigger.refresh();
-        }
-      } catch (_) {
-        /* ignore */
-      }
-      scrollToHash(hash, instant);
-    };
-    run(true);
-    requestAnimationFrame(() => {
-      run(true);
-      setTimeout(() => run(true), 90);
-      setTimeout(() => run(false), 220);
-      setTimeout(() => run(true), 480);
-      setTimeout(() => run(true), 900);
-    });
-  };
-
-  const samePath = (a, b) => {
-    const norm = (p) => {
-      let s = String(p || "/").replace(/\\/g, "/");
-      try {
-        s = decodeURIComponent(s);
-      } catch (_) {
-        /* ignore */
-      }
-      if (s.endsWith("/index.html")) s = s.slice(0, -10) || "/";
-      if (s.endsWith("/")) s = s.slice(0, -1) || "/";
-      return s.toLowerCase();
-    };
-    return norm(a) === norm(b);
-  };
-
-  document.addEventListener("click", (event) => {
-    if (event.defaultPrevented) return;
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    const link = event.target.closest && event.target.closest("a[href]");
-    if (!link) return;
-    if (link.getAttribute("download") != null) return;
-    const target = link.getAttribute("target");
-    if (target && target !== "_self") return;
-    let url;
-    try {
-      url = new URL(link.href, location.href);
-    } catch (_) {
-      return;
-    }
-    if (url.origin !== location.origin) return;
-    if (!url.hash || url.hash === "#") return;
-    if (!samePath(url.pathname, location.pathname)) return;
-    event.preventDefault();
-    setNavOpen(false);
-    const next = url.pathname + url.search + url.hash;
-    if (`${location.pathname}${location.search}${location.hash}` !== next) {
-      try {
-        history.pushState(null, "", next);
-      } catch (_) {
-        /* ignore */
-      }
-    }
-    goHashWhenReady(url.hash);
-  });
-
-  window.addEventListener("hashchange", () => {
-    if (location.hash) goHashWhenReady(location.hash);
-  });
-
-  window.haruScrollToHash = scrollToHash;
-
   document.addEventListener("click", (event) => {
     const card = event.target.closest && event.target.closest(".card");
     if (!card) return;
@@ -1262,7 +1159,7 @@
     const lenis = new Lenis({
       duration: 1.15,
       smoothWheel: true,
-      anchors: false,
+      anchors: true,
     });
 
     window.haruLenis = lenis;
@@ -1360,47 +1257,6 @@
   } catch (_) {
     root.classList.remove("js-motion");
   }
-
-  if (location.hash && location.hash.length > 1) {
-    goHashWhenReady(location.hash);
-    window.addEventListener(
-      "load",
-      function () {
-        goHashWhenReady(location.hash);
-      },
-      { once: true }
-    );
-  }
-
-  const bindGalleries = () => {
-    const mq = window.matchMedia("(max-width: 899px)");
-    document.querySelectorAll("[data-gallery]").forEach((gallery) => {
-      const shots = gallery.querySelectorAll(".product__shot");
-      if (shots.length < 2) return;
-      const bar =
-        gallery.parentElement &&
-        gallery.parentElement.querySelector(".product__progress span");
-      const update = () => {
-        if (!bar) return;
-        const n = shots.length;
-        const thumb = 1 / n;
-        bar.style.width = thumb * 100 + "%";
-        if (!mq.matches) {
-          bar.style.transform = "translateX(0)";
-          return;
-        }
-        const max = gallery.scrollWidth - gallery.clientWidth;
-        const t = max <= 1 ? 0 : Math.min(1, Math.max(0, gallery.scrollLeft / max));
-        bar.style.transform = "translateX(" + t * (n - 1) * 100 + "%)";
-      };
-      gallery.addEventListener("scroll", update, { passive: true });
-      window.addEventListener("resize", update);
-      if (mq.addEventListener) mq.addEventListener("change", update);
-      else if (mq.addListener) mq.addListener(update);
-      update();
-    });
-  };
-  bindGalleries();
 
   const letterForm = document.getElementById("letterForm");
   const letterNote = document.getElementById("letterNote");

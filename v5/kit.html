@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
     <script src="js/boot.js"></script>
-    <title>HARU — Escova de bambu</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png" />
-    <link rel="apple-touch-icon" href="images/apple-touch.png" />
+    <title>HARU — Kit de duas</title>
+    <link rel="icon" href="images/logo-olive.png" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo-olive.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo-olive.png" />
+    <link rel="apple-touch-icon" href="images/logo-olive.png" />
     <meta
       name="description"
-      content="Escova de bambu HARU com cerdas de crina de cavalo. Sem nylon. Sem plástico."
+      content="Kit HARU de duas escovas de bambu com cerdas de crina de cavalo."
     />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/pages.css" />
     <link rel="stylesheet" href="css/web.css" />
   </head>
-  <body data-page="product" data-product="p1" data-weight="1">
+  <body data-page="product" data-product="p2" data-weight="2">
     <a class="skip" href="#conteudo" data-i18n="skip">Ir para o conteúdo</a>
 
     <header class="nav" id="topo">
@@ -49,14 +49,12 @@
           aria-expanded="false"
           aria-controls="cartDrawer"
           data-i18n-aria="cart.open"
-          aria-label="Abrir a cesta"
+          aria-label="Abrir a sacola"
         >
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M8.85 8.2V6.2A3.15 3.15 0 0 1 12 3.1 3.15 3.15 0 0 1 15.15 6.2V8.2" />
-            <ellipse cx="12" cy="8.35" rx="7.35" ry="1.9" />
-            <path d="M4.9 8.55c.55 3.55 1.15 9.35 7.1 9.35s6.55-5.8 7.1-9.35" />
-            <path d="M6.7 11.85c.5 2.7 1.7 4.85 5.3 4.85s4.8-2.15 5.3-4.85" />
-            <path d="M8.15 14.95c.4 1.25 1.3 2.05 3.85 2.05s3.45-.8 3.85-2.05" />
+            <path d="M8.15 8.85V7.1A3.85 3.85 0 0 1 12 3.35 3.85 3.85 0 0 1 15.85 7.1v1.75" />
+            <path d="M6.1 8.85h11.8l.9 12.3H5.2L6.1 8.85Z" />
+            <path d="M6.65 12.1h10.7" />
           </svg>
           <span class="cart-toggle__count" id="cartCount" hidden>0</span>
         </button>
@@ -85,26 +83,23 @@
 
     <main id="conteudo">
       <article class="product">
-        <div class="product__stage">
-        <div class="product__gallery" data-gallery>
+        <div class="product__gallery">
           <figure class="product__shot">
             <img
-              src="images/product-escova.jpg"
-              data-i18n-alt="p1.alt"
-              alt="Escova de dentes de bambu com cerdas naturais"
+              src="images/product-kit.jpg"
+              data-i18n-alt="p2.alt"
+              alt="Duas escovas de bambu lado a lado"
             />
           </figure>
           <figure class="product__shot">
-            <img src="images/product-escova-2.jpg" alt="" />
+            <img src="images/product-kit-2.jpg" alt="" />
           </figure>
           <figure class="product__shot">
-            <img src="images/product-escova-3.jpg" alt="" />
+            <img src="images/product-kit-3.jpg" alt="" />
           </figure>
           <figure class="product__shot">
-            <img src="images/product-escova-4.jpg" alt="" />
+            <img src="images/product-kit-4.jpg" alt="" />
           </figure>
-        </div>
-          <div class="product__progress" aria-hidden="true"><span></span></div>
         </div>
 
         <div class="product__info">
@@ -112,27 +107,28 @@
             >Voltar à coleção</a
           >
           <p class="kicker" data-i18n="product.kicker">Coleção</p>
-          <h1 class="product__name" data-i18n="p1.name">Escova de bambu</h1>
-          <p class="product__price">R$ 48</p>
-          <p class="product__lead" data-i18n="p1.desc">
-            Cabo de bambu selecionado, sem verniz plástico. Cerdas de crina de
-            cavalo, esterilizadas a vapor, de animais selecionados e tratados
-            com o devido cuidado.
+          <h1 class="product__name" data-i18n="p2.name">Kit de duas</h1>
+          <p class="product__price">R$ 86</p>
+          <p class="product__lead" data-i18n="p2.desc">
+            Duas escovas iguais: cabo de bambu selecionado, sem verniz plástico,
+            e cerdas de crina de cavalo esterilizadas a vapor, de animais
+            selecionados e tratados com o devido cuidado. O kit sai um pouco
+            abaixo de comprar duas avulsas.
           </p>
 
           <div class="product__actions">
             <button
               type="button"
               class="product__cta product__cta--ghost"
-              data-add-cart="p1"
+              data-add-cart="p2"
               data-i18n="cart.add"
             >
-              Adicionar à cesta
+              Adicionar à sacola
             </button>
             <button
               type="button"
               class="product__cta"
-              data-buy="p1"
+              data-buy="p2"
               data-i18n="product.order"
             >
               Finalizar a compra
@@ -142,19 +138,20 @@
           <dl class="product__specs">
             <div class="product__spec">
               <dt data-i18n="spec.handle">Matéria</dt>
-              <dd data-i18n="p1.handle">Bambu selecionado, sem verniz plástico</dd>
+              <dd data-i18n="p2.handle">Duas unidades, bambu selecionado</dd>
             </div>
             <div class="product__spec">
               <dt data-i18n="spec.bristle">Cerdas</dt>
-              <dd data-i18n="p1.bristle">Crina de cavalo, esterilizada a vapor</dd>
+              <dd data-i18n="p2.bristle">Crina de cavalo, esterilizada a vapor</dd>
             </div>
             <div class="product__spec">
               <dt data-i18n="spec.care">Uso</dt>
-              <dd data-i18n="p1.care">
-                Secar em pé, cerdas para cima. Não deixar de molho.
+              <dd data-i18n="p2.care">
+                Secar em pé, cada uma no ar. Não deixar de molho.
               </dd>
             </div>
           </dl>
+          <p class="product__fine" data-i18n="trust.anvisa">Aprovado pela ANVISA.</p>
 
           <section class="product__block" aria-labelledby="shipTitle">
             <h2 class="product__block-title" id="shipTitle" data-i18n="product.ship">
@@ -232,15 +229,15 @@
       <section class="also" aria-labelledby="alsoTitle">
         <h2 class="also__title" id="alsoTitle" data-i18n="product.also">Na coleção</h2>
         <div class="also__grid">
-          <a class="also__item" href="kit.html">
+          <a class="also__item" href="escova.html">
             <img
-              src="images/product-kit.jpg"
-              data-i18n-alt="p2.alt"
-              alt="Duas escovas de bambu lado a lado"
+              src="images/product-escova.jpg"
+              data-i18n-alt="p1.alt"
+              alt="Escova de dentes de bambu com cerdas naturais"
               width="480"
               height="480"
             />
-            <span data-i18n="p2.name">Kit de duas</span>
+            <span data-i18n="p1.name">Escova de bambu</span>
           </a>
           <a class="also__item" href="suporte.html">
             <img

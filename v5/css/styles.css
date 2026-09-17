@@ -221,20 +221,10 @@ select {
 }
 
 .nav__tools {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
+  display: flex;
   align-items: center;
-  gap: 0.15rem;
+  gap: 0.12rem;
   flex-shrink: 0;
-  width: auto;
-}
-
-.nav__tools .theme-toggle,
-.nav__tools .cart-toggle {
-  flex: 0 0 2.35rem;
-  width: 2.35rem;
-  height: 2.35rem;
 }
 
 .nav__menu {
@@ -368,7 +358,6 @@ html[data-theme="kraft"] .theme-toggle__moon {
 .nav__links a {
   position: relative;
   white-space: nowrap;
-  padding: 0.45rem 0.1rem;
   opacity: 0.86;
   transition: opacity 0.25s;
 }
@@ -824,34 +813,10 @@ html[data-theme="kraft"] .hero__logo--kraft {
 /* ——— Values ——— */
 
 .values {
-  position: relative;
-  overflow: hidden;
   background: var(--olive-deep);
   color: var(--ivory);
   transition: background-color var(--theme-time) var(--theme-ease),
     color var(--theme-time) var(--theme-ease);
-}
-
-.values__bamboo {
-  position: absolute;
-  right: -6%;
-  top: -42%;
-  height: 186%;
-  width: auto;
-  color: color-mix(in srgb, var(--ivory) 26%, transparent);
-  pointer-events: none;
-  z-index: 0;
-  transform: rotate(-36deg);
-  transform-origin: 58% 50%;
-}
-
-html[data-theme="kraft"] .values__bamboo {
-  color: color-mix(in srgb, var(--ivory) 24%, transparent);
-}
-
-.values > *:not(.values__bamboo) {
-  position: relative;
-  z-index: 1;
 }
 
 .values__title {
@@ -967,15 +932,6 @@ html[data-theme="kraft"] .values__bamboo {
   z-index: 1;
 }
 
-#loja,
-#marca,
-#porque,
-#materia,
-#cartas,
-#contato {
-  scroll-margin-top: calc(var(--nav-h) + 0.4rem);
-}
-
 .contact__title {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(2.2rem, 4vw, 3.4rem);
@@ -1024,73 +980,37 @@ html[data-theme="kraft"] .values__bamboo {
 
 .contact__ways {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 0.35rem 1.85rem;
-  width: auto;
-  max-width: none;
-  margin: 0 auto;
+  gap: 0.85rem;
 }
 
 .contact__way {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.42rem;
-  flex: 0 0 auto;
-  min-height: 1.7rem;
-  padding: 0.15rem 0 0.28rem;
-  box-sizing: border-box;
+  gap: 0.4rem;
   color: var(--ivory);
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  border: 0;
+  text-shadow: 0 1px 14px rgba(26, 36, 24, 0.5);
   border-bottom: 1px solid transparent;
-  background: none;
-  text-shadow: 0 1px 12px color-mix(in srgb, var(--forest) 45%, transparent);
-  transition: border-color 0.35s var(--ease), opacity 0.35s var(--ease);
 }
 
-.contact__way-icon {
-  width: 1.12rem;
-  height: 1.12rem;
-  flex: 0 0 1.12rem;
-  display: grid;
-  place-items: center;
-  overflow: visible;
-  border-radius: 0;
-}
-
-.contact__way-icon img,
-img.contact__way-icon {
-  width: 1.12rem;
-  height: 1.12rem;
-  object-fit: contain;
-  border-radius: 0;
-}
-
-.contact__way-icon svg,
 .contact__way svg {
-  width: 1.12rem;
-  height: 1.12rem;
+  width: 1.15rem;
+  height: 1.15rem;
   fill: currentColor;
 }
 
 .contact__way:hover,
 .contact__way:focus-visible {
-  background: none;
-  color: var(--ivory);
-  border-bottom-color: color-mix(in srgb, var(--ivory) 72%, transparent);
+  border-bottom-color: rgba(246, 241, 232, 0.7);
 }
 
 a.contact__way:not([href]) {
   cursor: default;
-}
-
-html.is-android .contact__way {
-  backdrop-filter: none;
 }
 
 /* ——— Footer ——— */
@@ -1371,26 +1291,6 @@ html.js-motion .reveal {
     padding-bottom: 3.6rem;
   }
 
-  .values__bamboo {
-    right: -28%;
-    top: -40%;
-    height: 178%;
-    width: auto;
-    transform: rotate(-40deg);
-  }
-
-  .contact__ways {
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 22rem;
-    gap: 0.2rem 1.4rem;
-  }
-
-  .contact__way {
-    flex: 0 0 auto;
-    width: auto;
-  }
-
   .value__index {
     margin-bottom: 0.35rem;
   }
@@ -1571,45 +1471,11 @@ html.cart-open {
   flex-direction: column;
   width: 100%;
   max-width: 26.5rem;
-  isolation: isolate;
   background: var(--ivory);
   color: var(--text);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   padding: 1.2rem var(--page-pad) 2rem;
-}
-
-.cart-drawer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: url("../images/cesta-fundo.jpg") center / cover no-repeat;
-  opacity: 0.13;
-  transition: opacity 0.45s var(--theme-ease), filter var(--theme-time) var(--theme-ease);
-}
-
-html[data-theme="kraft"] .cart-drawer::before {
-  filter: sepia(0.42) saturate(0.72) brightness(0.96);
-  opacity: 0.1;
-}
-
-.cart-drawer.has-items::before {
-  opacity: 0.035;
-}
-
-html[data-theme="kraft"] .cart-drawer.has-items::before {
-  opacity: 0.025;
-}
-
-.cart-drawer > * {
-  position: relative;
-  z-index: 1;
 }
 
 .cart-drawer[hidden],
