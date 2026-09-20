@@ -1,9 +1,22 @@
 @import "tailwindcss";
+
+@theme {
+  --color-ivory: #f6f1e8;
+  --color-cream: #e8dfd0;
+  --color-olive: #5c6b47;
+  --color-olive-deep: #2f3b28;
+  --color-forest: #1a2418;
+  --color-text: #2c3328;
+  --color-muted: #6b7264;
+}
+
 @plugin "daisyui"{
   themes: light --default;
 }
+
 @import '@fontsource-variable/cormorant-garamond';
 @import '@fontsource-variable/outfit';
+@import '@fontsource-variable/newsreader';
 
 body {
   font-family: 'Outfit Variable', sans-serif;
