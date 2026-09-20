@@ -10,7 +10,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`h-full antialiased bg-[#f6f1e8]`}
+      className={`h-full antialiased bg-ivory`}
     >
       <body>{children}</body>
     </html>
