@@ -15,11 +15,13 @@ export default function Product({
   id,
 }: ProductProps) {
   return (
-    <div className="card max-w-125 min-w-50">
+    <Link href={`products/${id}`} className="card max-w-125 min-w-50">
       <figure>
-        <img
-          alt=""
-          src="https://aeromorto.github.io/HaruSite/images/product-escova.jpg"
+        <Image
+          alt="Foto de um produto da Haru"
+          src="/background/product-escova.jpg"
+          width={1024}
+          height={1024}
           className="w-full"
         />
       </figure>
@@ -30,14 +32,13 @@ export default function Product({
         <p className="text-sm mt-2 font-light">{description}</p>
         <div className="flex justify-between mt-4 card-actions">
           <p className="text-sm">R$ {price}</p>
-          <Link
-            href={id}
-            className="underline underline-offset-4 tracking-widest font-thin text-sm text-lime-900"
+          <p
+            className="underline text-end underline-offset-4 tracking-widest font-thin text-sm text-lime-900"
           >
             VER PRODUTO
-          </Link>
+          </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
