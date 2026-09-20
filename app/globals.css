@@ -2,9 +2,9 @@
 @plugin "daisyui"{
   themes: light --default;
 }
-@import '@fontsource/cormorant-garamond';
-@import '@fontsource/outfit';
+@import '@fontsource-variable/cormorant-garamond';
+@import '@fontsource-variable/outfit';
 
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit Variable', sans-serif;
 }
