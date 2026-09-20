@@ -4,19 +4,19 @@ export default function HeaderNavButtons() {
   return (
     <>
       <li>
-        <Link href={'/products'} className="p-2">SHOP</Link>
+        <Link href={'/products'} className="p-2">LOJA</Link>
       </li>
       <li>
-        <Link href={'/about'} className="p-2">THE BRAND</Link>
+        <Link href={'/about'} className="p-2">A MARCA</Link>
       </li>
       <li>
-        <Link href={'/microplastic'} className="p-2">MATTER</Link>
+        <Link href={'/microplastic'} className="p-2">MATÉRIA</Link>
       </li>
       <li>
-        <Link href={'/use-notes'} className="p-2">USE</Link>
+        <Link href={'/use-notes'} className="p-2">O USO</Link>
       </li>
       <li>
-        <Link href={'/contact'} className="p-2">CONTACT</Link>
+        <Link href={'/contact'} className="p-2">CONTATO</Link>
       </li>
     </>
   )
