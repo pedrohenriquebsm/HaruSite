@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative w-screen h-screen" id="top">
-      <Link href="/#header" className="absolute w-screen h-screen z-2" />
+    <section className="relative w-full h-screen" id="top">
+      <Link href="/#header" className="absolute w-full h-screen z-2" />
       <div className="absolute inset-0 z-1 bg-forest/30" />
       <div className="flex flex-col justify-center items-center h-screen relative z-1">
         <Image
@@ -20,7 +20,7 @@ export default function Hero() {
           HARU
         </h1>
       </div>
-      <p className="absolute bottom-16 w-screen z-1 flex flex-col items-center gap-1 text-white/90 drop-shadow-lg">
+      <p className="absolute bottom-16 w-full z-1 flex flex-col items-center gap-1 text-white/90 drop-shadow-lg">
         <span className="text-xs uppercase tracking-[0.3em]">
           Rolar para baixo
         </span>
