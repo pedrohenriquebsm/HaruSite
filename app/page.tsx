@@ -103,7 +103,7 @@ export default function Home() {
             src={"/background/contact-horses.jpg"}
             width={1920}
             height={1200}
-            className="absolute inset-0 z-0 object-cover w-screen h-full"
+            className="absolute inset-0 z-0 object-cover w-full h-full"
           />
           <div>
             <span></span>

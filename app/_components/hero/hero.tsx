@@ -32,7 +32,7 @@ export default function Hero() {
         width={1920}
         height={1280}
         loading="eager"
-        className="w-screen h-screen absolute inset-0 object-cover"
+        className="w-full h-screen absolute inset-0 object-cover"
       />
     </section>
   );
