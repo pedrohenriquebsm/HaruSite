@@ -1,4 +1,11 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "HARU — O que a escova de nylon deixa no corpo",
+  description:
+    "Microplásticos na escovação, no sangue e na Terra. Por que a HARU usa crina, e não nylon.",
+};
 
 export default function Microplastic() {
   return (
@@ -7,7 +14,7 @@ export default function Microplastic() {
         <h1 className="font-light uppercase tracking-widest text-sm">
           Matéria
         </h1>
-        <h2 className="text-7xl font-medium">
+        <h2 className="font-[Cormorant_Garamond_Variable] text-7xl font-medium">
           O que a escova de nylon deixa no corpo.
         </h2>
         <p>
@@ -25,7 +32,7 @@ export default function Microplastic() {
         />
         <div className="flex flex-col max-w-2xl gap-5 text-lg">
           <p className="tracking-widest uppercase">01 — O corpo</p>
-          <h3 className="text-5xl font-medium">
+          <h3 className="font-[Cormorant_Garamond_Variable] text-5xl font-medium">
             Microplásticos. O hábito invisível.
           </h3>
           <p>
@@ -58,7 +65,7 @@ export default function Microplastic() {
       <section className="grid grid-cols-1 gap-5 sm:grid-cols-2 items-center">
         <div className="flex flex-col max-w-2xl gap-5 text-lg sm:order-1 order-2">
           <p className="tracking-widest uppercase">02 — A Terra</p>
-          <h3 className="text-5xl font-medium">Depois do corpo, o planeta.</h3>
+          <h3 className="font-[Cormorant_Garamond_Variable] text-5xl font-medium">Depois do corpo, o planeta.</h3>
           <p>
             Quando a escova sai da pia, o problema não acaba. Nylon e
             polipropileno não voltam para o solo. Fragmentam. Uma escova de
@@ -98,7 +105,7 @@ export default function Microplastic() {
         />
         <div className="flex flex-col max-w-2xl gap-5 text-lg">
           <p className="tracking-widest uppercase">03 — A crina</p>
-          <h3 className="text-5xl font-medium">
+          <h3 className="font-[Cormorant_Garamond_Variable] text-5xl font-medium">
             Por que crina, e não plástico.
           </h3>
           <p>

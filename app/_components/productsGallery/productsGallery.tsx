@@ -1,4 +1,5 @@
 import Product from "../product/product";
+import { PRODUCTS } from "@/app/_data/products";
 
 export default function ProductsGallery() {
   return (
@@ -10,36 +11,9 @@ export default function ProductsGallery() {
         </p>
       </span>
       <span className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4  gap-10">
-        <Product
-          description="Cabo de bambu selecionado, sem verniz plástico. esterilizadas a vapor."
-          name="Escova de bambu"
-          price={48.99}
-          id="10"
-        />
-        <Product
-          description="Cabo de bambu selecionado, sem verniz plástico. esterilizadas a vapor."
-          name="Escova de bambu"
-          price={48.99}
-          id="10"
-        />
-        <Product
-          description="Cabo de bambu selecionado, sem verniz plástico. esterilizadas a vapor."
-          name="Escova de bambu"
-          price={48.99}
-          id="10"
-        />
-        <Product
-          description="Cabo de bambu selecionado, sem verniz plástico. esterilizadas a vapor."
-          name="Escova de bambu"
-          price={48.99}
-          id="10"
-        />
-        <Product
-          description="Cabo de bambu selecionado, sem verniz plástico. esterilizadas a vapor."
-          name="Escova de bambu"
-          price={48.99}
-          id="10"
-        />
+        {PRODUCTS.map((product) => (
+          <Product key={product.slug} product={product} />
+        ))}
       </span>
     </section>
   );

@@ -1,5 +1,10 @@
+import { Metadata } from "next";
 import LegalNotes from "../../_components/legal/legalNotes/legalNotes";
 import LegalTitle from "../../_components/legal/legalTitle/legalTitle";
+
+export const metadata: Metadata = {
+  title: "HARU — Termos de uso",
+};
 
 export default function TermsOfUse() {
   return (

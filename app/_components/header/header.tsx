@@ -1,6 +1,8 @@
 import Link from "next/link";
 import HeaderNavButtons from "./headerNavButtons";
 import { Menu, ShoppingBag, ShoppingBasket } from "lucide-react";
+import ThemeToggle from "../theme/themeToggle";
+import CartDrawer from "../cart/cartDrawer";
 
 export default function Header() {
   return (
@@ -18,35 +20,9 @@ export default function Header() {
 
         <ul className="text-xs tracking-widest gap-10 justify-end hidden md:flex items-center flex-nowrap text-nowrap">
           <li>
-            <div className="drawer drawer-end">
-              <input
-                id="my-drawer-5"
-                type="checkbox"
-                className="drawer-toggle"
-              />
-              <div className="drawer-content">
-                <label
-                  htmlFor="my-drawer-5"
-                  className="drawer-button btn btn-ghost"
-                >
-                  <ShoppingBag width={15} />
-                </label>
-              </div>
-              <div className="drawer-side">
-                <label
-                  htmlFor="my-drawer-5"
-                  aria-label="close sidebar"
-                  className="drawer-overlay"
-                ></label>
-                <ul className="menu bg-base-200 min-h-full w-80 p-4">
-                  <li>
-                    <p className="text-3xl font-semibold font-[Cormorant_Garamond_Variable]">Cesta</p>
-                  </li>
-                  <li>
-                    <a>Sidebar Item 2</a>
-                  </li>
-                </ul>
-              </div>
+            <div className="flex items-center gap-1">
+              <CartDrawer />
+              <ThemeToggle />
             </div>
           </li>
           <HeaderNavButtons />

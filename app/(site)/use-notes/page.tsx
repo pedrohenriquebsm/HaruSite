@@ -1,4 +1,9 @@
+import { Metadata } from "next";
 import LegalTitle from "../../_components/legal/legalTitle/legalTitle";
+
+export const metadata: Metadata = {
+  title: "HARU — Notas de uso",
+};
 
 export default function UseNotes() {
   return (

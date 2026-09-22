@@ -1,25 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ProductShape } from "@/app/_data/products";
 
-interface ProductProps {
-  name: string;
-  description: string;
-  price: number;
-  id: string;
-}
 
 export default function Product({
-  name,
-  description,
-  price,
-  id,
-}: ProductProps) {
+  product
+}: {product :ProductShape}) {
   return (
-    <Link href={`products/${id}`} className="card max-w-125 min-w-50">
+    <Link href={`products/${product.slug}`} className="card max-w-125 min-w-50">
       <figure>
         <Image
-          alt="Foto de um produto da Haru"
-          src="/background/product-escova.jpg"
+          alt={product.alt}
+          src={product.gallery[0]}
           width={1024}
           height={1024}
           className="w-full"
@@ -27,11 +19,11 @@ export default function Product({
       </figure>
       <div className="p-2 card-body">
         <h2 className="text-2xl card-title font-[Cormorant_Garamond_Variable] font-[350]">
-          {name}
+          {product.name}
         </h2>
-        <p className="text-sm mt-2 font-light">{description}</p>
+        <p className="text-sm mt-2 font-light">{product.meta}</p>
         <div className="flex justify-between mt-4 card-actions">
-          <p className="text-sm">R$ {price}</p>
+          <p className="text-sm">R$ {product.priceLabel}</p>
           <p
             className="underline text-end underline-offset-4 tracking-widest font-thin text-sm text-lime-900"
           >
