@@ -13,7 +13,7 @@ export default function Home() {
         <Header />
       <main>
         <ProductsGallery />
-        <section className="flex flex-col text-text items-center text-center h-fit py-30 gap-10 min-w-auto max-w-4xl mx-auto">
+        <section className="flex flex-col text-text items-center text-center h-fit py-30 gap-10 min-w-auto max-w-4xl mx-auto" id="brand">
           <h3 className="font-light text-xs tracking-widest">A MARCA</h3>
           <h2 className="font-[Cormorant_Garamond_Variable] text-7xl font-medium">
             HARU é matéria <br />
@@ -87,7 +87,7 @@ export default function Home() {
             Saber Mais
           </Link>
         </section>
-        <section className="relative text-center py-60 text-white">
+        <section className="relative text-center py-60 text-white" id="contact">
           <div className="absolute inset-0 z-1 bg-forest/50" />
           <div className="z-1 flex flex-col gap-10 mx-auto relative min-w-auto max-w-lg">
             <p className="font-[Cormorant_Garamond_Variable] text-6xl font-medium">

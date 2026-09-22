@@ -2,7 +2,7 @@ import Product from "../product/product";
 
 export default function ProductsGallery() {
   return (
-    <section className="md:mt-10 p-10">
+    <section className="md:mt-10 p-10" id="store">
       <span className="flex flex-col gap-10 py-15">
         <p className="tracking-widest text-sm font-light">COLEÇÃO</p>
         <p className="font-[Cormorant_Garamond_Variable] text-5xl font-medium">

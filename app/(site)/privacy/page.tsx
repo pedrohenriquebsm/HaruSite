@@ -1,26 +1,22 @@
-import Footer from "../_components/footer/footer";
-import Header from "../_components/header/header";
-import LegalNotes from "../_components/legal/legalNotes/legalNotes";
-import LegalTitle from "../_components/legal/legalTitle/legalTitle";
+import LegalNotes from "../../_components/legal/legalNotes/legalNotes";
+import LegalTitle from "../../_components/legal/legalTitle/legalTitle";
 
 export default function Privacy() {
   return (
-    <>
-      <Header />
+    <main>
       <section className="flex flex-col gap-10 text-text p-10 max-w-xl">
-        <LegalTitle title="Privacidade"/>
-
+        <LegalTitle title="Privacidade" />
         <div className="flex flex-col gap-10">
           <LegalNotes
             title="Quem somos"
             description="HARU é uma marca de higiene em matéria natural — bambu e crina de
-              cavalo. O contato é contato@haru.natural."
+                cavalo. O contato é contato@haru.natural."
           />
           <LegalNotes
             title="O que guardamos"
             description="Para um pedido: e-mail, nome e o endereço completo do CEP. Não
-              pedimos senha. O código de seis dígitos serve só para confirmar o
-              e-mail."
+                pedimos senha. O código de seis dígitos serve só para confirmar o
+                e-mail."
           />
           <LegalNotes
             title="Neste aparelho"
@@ -36,7 +32,6 @@ export default function Privacy() {
           />
         </div>
       </section>
-      <Footer />
-    </>
+    </main>
   );
 }

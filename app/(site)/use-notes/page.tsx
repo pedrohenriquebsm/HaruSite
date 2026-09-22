@@ -1,11 +1,8 @@
-import Footer from "../_components/footer/footer";
-import Header from "../_components/header/header";
-import LegalTitle from "../_components/legal/legalTitle/legalTitle";
+import LegalTitle from "../../_components/legal/legalTitle/legalTitle";
 
 export default function UseNotes() {
   return (
-    <>
-      <Header />
+    <main>
       <section className="flex flex-col gap-5 text-text p-10 max-w-xl">
         <LegalTitle subtitle="O USO" title="Notas de uso" />
         <p className="font-light">
@@ -15,7 +12,9 @@ export default function UseNotes() {
         <div className="join join-vertical">
           <div className="collapse collapse-arrow join-item border-base-300 border">
             <input type="radio" name="my-accordion-4" defaultChecked />
-            <div className="collapse-title font-semibold font-[Cormorant_Garamond_Variable] text-2xl">De que é feita?</div>
+            <div className="collapse-title font-semibold font-[Cormorant_Garamond_Variable] text-2xl">
+              De que é feita?
+            </div>
             <div className="collapse-content text-sm">
               Cabo de bambu, sem verniz plástico. Cerdas de crina de cavalo —
               queratina, a mesma proteína do cabelo — esterilizadas a vapor. Sem
@@ -24,11 +23,12 @@ export default function UseNotes() {
           </div>
           <div className="collapse collapse-arrow join-item border-base-300 border">
             <input type="radio" name="my-accordion-4" />
-            <div className="collapse-title font-semibold font-[Cormorant_Garamond_Variable] text-2xl">Como secar?</div>
+            <div className="collapse-title font-semibold font-[Cormorant_Garamond_Variable] text-2xl">
+              Como secar?
+            </div>
             <div className="collapse-content text-sm">
-              Enxágue, sacuda e deixe secar em pé, cerdas para cima. Não deixe
-              de molho nem fechada num copo úmido. O suporte de pedra ajuda a
-              secar.
+              Enxágue, sacuda e deixe secar em pé, cerdas para cima. Não deixe de
+              molho nem fechada num copo úmido. O suporte de pedra ajuda a secar.
             </div>
           </div>
           <div className="collapse collapse-arrow join-item border-base-300 border">
@@ -54,15 +54,18 @@ export default function UseNotes() {
           </div>
           <div className="collapse collapse-arrow join-item border-base-300 border">
             <input type="radio" name="my-accordion-4" />
-            <div className="collapse-title font-semibold font-[Cormorant_Garamond_Variable] text-2xl">Onde guardar?</div>
+            <div className="collapse-title font-semibold font-[Cormorant_Garamond_Variable] text-2xl">
+              Onde guardar?
+            </div>
             <div className="collapse-content text-sm">
-              Em pé, cerdas para cima, no ar. O suporte de pedra é o melhor
-              lugar.
+              Em pé, cerdas para cima, no ar. O suporte de pedra é o melhor lugar.
             </div>
           </div>
           <div className="collapse collapse-arrow join-item border-base-300 border">
             <input type="radio" name="my-accordion-4" />
-            <div className="collapse-title font-semibold font-[Cormorant_Garamond_Variable] text-2xl">Quando trocar?</div>
+            <div className="collapse-title font-semibold font-[Cormorant_Garamond_Variable] text-2xl">
+              Quando trocar?
+            </div>
             <div className="collapse-content text-sm">
               Quando as cerdas já não limpam bem — em geral alguns meses. Depois
               pode ir para o composto: bambu e crina não são plástico.
@@ -70,7 +73,6 @@ export default function UseNotes() {
           </div>
         </div>
       </section>
-      <Footer />
-    </>
+    </main>
   );
 }

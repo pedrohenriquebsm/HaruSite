@@ -4,10 +4,10 @@ export default function HeaderNavButtons() {
   return (
     <>
       <li>
-        <Link href={'/products'} className="p-2">LOJA</Link>
+        <Link href={'/#store'} className="p-2">LOJA</Link>
       </li>
       <li>
-        <Link href={'/about'} className="p-2">A MARCA</Link>
+        <Link href={'/#brand'} className="p-2">A MARCA</Link>
       </li>
       <li>
         <Link href={'/microplastic'} className="p-2">MATÉRIA</Link>
@@ -16,7 +16,7 @@ export default function HeaderNavButtons() {
         <Link href={'/use-notes'} className="p-2">O USO</Link>
       </li>
       <li>
-        <Link href={'/contact'} className="p-2">CONTATO</Link>
+        <Link href={'/#contact'} className="p-2">CONTATO</Link>
       </li>
     </>
   )
