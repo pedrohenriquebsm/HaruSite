@@ -9,48 +9,21 @@ export default function CartDrawer() {
 
   return (
     <div className="drawer drawer-end">
-      <input id="my-drawer-5" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content">
-        <label htmlFor="my-drawer-5" className="drawer-button btn btn-ghost">
-          <ShoppingBag width={15} />
-        </label>
-      </div>
-      <div className="drawer-side">
-        <label
-          htmlFor="my-drawer-5"
-          aria-label="close sidebar"
-          className="drawer-overlay"
-        ></label>
-        <ul className="menu bg-base-200 min-h-full w-80 p-4">
-          <li>
-            <p className="text-3xl font-semibold font-[Cormorant_Garamond_Variable]">
-              Cesta
-            </p>
-          </li>
-          <li>
-            <a>Sua cesta está vazia</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
-  {
-    /*<div className="drawer drawer-end">
       <input id="cart-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         <label
           htmlFor="cart-drawer"
-          className="drawer-button btn btn-ghost"
-          aria-label="Abrir a cesta"
+          className="drawer-button btn btn-ghost relative"
+          aria-label={
+            count > 0 ? `Abrir a cesta (${count} ${count === 1 ? "item" : "itens"})` : "Abrir a cesta"
+          }
         >
-          <span className="relative">
-            <ShoppingBag width={15} />
-            {count > 0 && (
-              <span className="badge badge-sm badge-outline absolute -right-2 -top-2 bg-ivory text-olive-deep">
-                {count}
-              </span>
-            )}
-          </span>
+          <ShoppingBag width={15} />
+          {count > 0 && (
+            <span className="badge badge-sm badge-outline absolute -right-2 -top-2 bg-ivory text-olive-deep">
+              {count}
+            </span>
+          )}
         </label>
       </div>
       <div className="drawer-side z-40">
@@ -59,7 +32,10 @@ export default function CartDrawer() {
           aria-label="Fechar a cesta"
           className="drawer-overlay"
         ></label>
-        <div className="bg-ivory text-text flex min-h-full w-80 flex-col gap-5 p-6">
+        <div
+          className="bg-ivory text-text flex min-h-full w-80 flex-col gap-5 p-6"
+          data-lenis-prevent
+        >
           <div className="flex items-center justify-between">
             <p className="font-[Cormorant_Garamond_Variable] text-3xl font-semibold">
               Cesta
@@ -133,7 +109,10 @@ export default function CartDrawer() {
                 <span className="font-light">Total</span>
                 <span>R$ {total}</span>
               </div>
-              <button className="btn bg-olive-deep font-light tracking-widest text-white uppercase text-sm">
+              <button
+                type="button"
+                className="btn bg-olive-deep font-light tracking-widest text-white uppercase text-sm"
+              >
                 Finalizar a compra
               </button>
               <p className="text-xs font-light text-muted">
@@ -144,6 +123,6 @@ export default function CartDrawer() {
           )}
         </div>
       </div>
-    </div>*/
-  }
+    </div>
+  );
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import HeaderNavButtons from "./headerNavButtons";
-import { Menu, ShoppingBag, ShoppingBasket } from "lucide-react";
+import { Menu } from "lucide-react";
 import ThemeToggle from "../theme/themeToggle";
 import CartDrawer from "../cart/cartDrawer";
 

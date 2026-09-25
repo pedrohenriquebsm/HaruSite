@@ -7,7 +7,7 @@ export default function Product({
   product
 }: {product :ProductShape}) {
   return (
-    <Link href={`products/${product.slug}`} className="card max-w-125 min-w-50">
+    <Link href={`/products/${product.slug}`} className="card max-w-125 min-w-50">
       <figure>
         <Image
           alt={product.alt}

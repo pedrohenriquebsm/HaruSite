@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Header from "./_components/header/header";
-import Product from "./_components/product/product";
 import Link from "next/link";
 import Hero from "./_components/hero/hero";
 import Footer from "./_components/footer/footer";
