@@ -13,7 +13,7 @@ export default function CartDrawer() {
       <div className="drawer-content">
         <label
           htmlFor="cart-drawer"
-          className="drawer-button btn btn-ghost relative"
+          className="drawer-button btn bg-transparent hover:bg-transparent border-0 relative"
           aria-label={
             count > 0 ? `Abrir a cesta (${count} ${count === 1 ? "item" : "itens"})` : "Abrir a cesta"
           }

@@ -18,7 +18,7 @@ export default function ThemeToggle() {
   return (
     <button
       type="button"
-      className="btn btn-ghost"
+      className="btn bg-transparent hover:bg-transparent border-0"
       onClick={flip}
       aria-label="Alternar tema claro e modo anti-luz azul"
     >
