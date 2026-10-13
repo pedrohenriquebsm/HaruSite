@@ -244,7 +244,7 @@ function Hero() {
           >
             {t("hero.hint")}
           </span>
-          <ArrowDown className="h-5 w-5 animate-bounce hero-enter-fade" />
+          <ArrowDown className="h-5 w-5 animate-bounce" />
         </p>
       </section>
     </div>
