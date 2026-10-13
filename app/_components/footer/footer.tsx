@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import HeaderNavButtons from "../header/headerNavButtons";
 import Link from "next/link";
 import { asset } from "@/app/_lib/assets";
+import { useI18n } from "@/app/_lib/i18n";
 
 export default function Footer() {
+  const { t } = useI18n();
+
   return (
     <footer className="py-5 px-10 flex flex-col gap-5 text-muted">
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 items-center">
@@ -15,21 +20,28 @@ export default function Footer() {
             height={642}
             className="w-10"
           ></Image>
-          <Link href="/#top" className="font-[Cormorant_Garamond_Variable] font-bold text-lg tracking-widest">HARU</Link>
+          <Link
+            href="/#top"
+            className="font-[Cormorant_Garamond_Variable] font-bold text-lg tracking-widest"
+          >
+            HARU
+          </Link>
         </div>
         <div>
-          <ul className="text-xs text-center tracking-widest gap-5 lg:gap-10 justify-center flex flex-col lg:flex-row flex-nowrap text-nowrap">
-            <HeaderNavButtons />
-          </ul>
+          <nav aria-label={t("footer.nav")}>
+            <ul className="text-xs text-center uppercase tracking-widest gap-5 lg:gap-10 justify-center flex flex-col lg:flex-row flex-nowrap text-nowrap">
+              <HeaderNavButtons />
+            </ul>
+          </nav>
         </div>
         <div>
-          <p className="text-center lg:text-end text-sm">HARU. Higiene feita de matéria.</p>
+          <p className="text-center lg:text-end text-sm">{t("footer.copy")}</p>
         </div>
       </div>
       <div className="text-center text-xs flex gap-3 justify-center">
-        <p>&copy; {new Date().getFullYear()} HARU. Todos os direitos reservados</p>
-        <Link href="/privacy">Privacidade</Link>
-        <Link href="/terms">Termos de uso</Link>
+        <p>{t("legal.copy")}</p>
+        <Link href="/privacy">{t("legal.privacy")}</Link>
+        <Link href="/terms">{t("legal.terms")}</Link>
       </div>
     </footer>
   );

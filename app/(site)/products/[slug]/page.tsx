@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProductPage from "@/app/_components/productPage/productPage";
 import { getProduct, PRODUCTS } from "@/app/_data/products";
+import translations from "@/app/_data/translations.json";
+
+const PT = (translations as Record<string, Record<string, string>>).pt;
 
 export function generateStaticParams() {
   return PRODUCTS.map((p) => ({ slug: p.slug }));
@@ -16,8 +19,8 @@ export async function generateMetadata({
   const product = getProduct(slug);
   if (!product) return {};
   return {
-    title: product.docTitle,
-    description: product.docDescription,
+    title: PT[`${product.prefix}.docTitle`],
+    description: PT[`${product.prefix}.docDesc`],
   };
 }
 

@@ -1,16 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useI18n, money } from "@/app/_lib/i18n";
 import type { ProductShape } from "@/app/_data/products";
 
+export default function Product({ product }: { product: ProductShape }) {
+  const { t } = useI18n();
 
-export default function Product({
-  product
-}: {product :ProductShape}) {
   return (
-    <Link href={`/products/${product.slug}`} className="card max-w-125 min-w-50">
+    <Link
+      href={`/products/${product.slug}`}
+      className="card max-w-125 min-w-50"
+    >
       <figure>
         <Image
-          alt={product.alt}
+          alt={t(`${product.prefix}.alt`)}
           src={product.gallery[0]}
           width={1024}
           height={1024}
@@ -19,15 +24,13 @@ export default function Product({
       </figure>
       <div className="p-2 card-body">
         <h2 className="text-2xl card-title font-[Cormorant_Garamond_Variable] font-[350]">
-          {product.name}
+          {t(`${product.prefix}.name`)}
         </h2>
-        <p className="text-sm mt-2 font-light">{product.meta}</p>
+        <p className="text-sm mt-2 font-light">{t(`${product.prefix}.meta`)}</p>
         <div className="flex justify-between mt-4 card-actions">
-          <p className="text-sm">R$ {product.priceLabel}</p>
-          <p
-            className="underline text-end underline-offset-4 tracking-widest font-thin text-sm text-lime-900"
-          >
-            VER PRODUTO
+          <p className="text-sm">{money(product.price)}</p>
+          <p className="underline text-end underline-offset-4 tracking-widest font-thin text-sm text-lime-900 uppercase">
+            {t("product.view")}
           </p>
         </div>
       </div>

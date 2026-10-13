@@ -14,6 +14,7 @@ import {
 } from "react";
 import type Lenis from "lenis";
 import { asset } from "@/app/_lib/assets";
+import { useI18n } from "@/app/_lib/i18n";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,6 +43,7 @@ const useIsomorphicLayoutEffect =
 // pinada quando o layout re-renderiza (ex.: estado do carrinho), mantendo
 // intactos os estilos inline (transform/opacity) aplicados pelo GSAP.
 function Hero() {
+  const { t } = useI18n();
   const trackRef = useRef<HTMLDivElement>(null);
   const rootRef = useRef<HTMLElement>(null);
   const imgARef = useRef<HTMLDivElement>(null);
@@ -156,6 +158,7 @@ function Hero() {
         ref={rootRef}
         className="hero-pin sticky top-0 w-full h-screen overflow-hidden"
         id="top"
+        aria-label={t("hero.aria")}
       >
         <Link
           href="/#header"
@@ -171,7 +174,7 @@ function Hero() {
         >
           <Image
             src={asset("/background/hero-bamboo.jpg")}
-            alt="Floresta de bambu vista de baixo, troncos subindo em direção ao céu"
+            alt={t("hero.imgA")}
             width={1920}
             height={1280}
             loading="eager"
@@ -188,7 +191,7 @@ function Hero() {
         >
           <Image
             src={asset("/background/hero-2.jpg")}
-            alt="Troncos de bambu mais próximos, com luz filtrando pela copa"
+            alt={t("hero.imgB")}
             width={1920}
             height={1280}
             loading="eager"
@@ -209,7 +212,7 @@ function Hero() {
           >
             <Image
               src={asset("/logos/logo-light.png")}
-              alt="Logo da Haru, sendo um desenho minimalista de uma silhueta de um cavalo"
+              alt={t("hero.logo")}
               width={587}
               height={695}
               loading="eager"
@@ -222,6 +225,12 @@ function Hero() {
           >
             HARU
           </h1>
+          <p
+            className="hero-enter text-ivory/90 text-center text-sm sm:text-base uppercase tracking-[0.3em] drop-shadow-lg mt-4 px-6 min-w-auto max-w-sm"
+            style={{ "--d": "450ms" } as CSSProperties}
+          >
+            {t("hero.tag")}
+          </p>
         </div>
 
         {/* Arro de rolagem */}
@@ -233,7 +242,7 @@ function Hero() {
             className="text-xs uppercase tracking-[0.3em] hero-enter-fade"
             style={{ animationDelay: "700ms" }}
           >
-            Rolar para baixo
+            {t("hero.hint")}
           </span>
           <ArrowDown className="h-5 w-5 animate-bounce hero-enter-fade" />
         </p>

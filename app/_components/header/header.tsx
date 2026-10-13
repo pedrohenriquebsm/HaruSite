@@ -2,6 +2,7 @@ import Link from "next/link";
 import HeaderNavButtons from "./headerNavButtons";
 import { Menu } from "lucide-react";
 import ThemeToggle from "../theme/themeToggle";
+import LanguageToggle from "../languageToggle/languageToggle";
 import CartDrawer from "../cart/cartDrawer";
 
 export default function Header() {
@@ -18,10 +19,11 @@ export default function Header() {
           HARU
         </Link>
 
-        <ul className="text-xs tracking-widest gap-10 justify-end hidden md:flex items-center flex-nowrap text-nowrap">
+        <ul className="text-xs uppercase tracking-widest gap-10 justify-end hidden md:flex items-center flex-nowrap text-nowrap">
           <li>
             <div className="flex items-center gap-1">
               <CartDrawer />
+              <LanguageToggle />
               <ThemeToggle />
             </div>
           </li>
@@ -32,7 +34,12 @@ export default function Header() {
             <summary className="btn btn-ghost active:bg-transparent focus:bg-transparent focus:border-0 hover:bg-transparent hover:border-0">
               <Menu />
             </summary>
-            <ul className="menu dropdown-content absolute inset-x-0 w-full top-full gap-2 z-1 shadow-sm p-2 text-xs bg-ivory tracking-widest">
+            <ul className="menu dropdown-content absolute inset-x-0 w-full top-full gap-2 z-1 shadow-sm p-2 text-xs uppercase bg-ivory tracking-widest">
+              <li className="flex items-center justify-center gap-1 pb-2">
+                <CartDrawer id="cart-drawer-mobile" />
+                <LanguageToggle />
+                <ThemeToggle />
+              </li>
               <HeaderNavButtons />
             </ul>
           </details>
