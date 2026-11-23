@@ -9,7 +9,8 @@ export default function Home() {
     <>
       <Hero />
       <Header />
-      <main id="main" tabIndex={-1}>
+      <main id="conteudo" tabIndex={-1}>
+        <div id="main" />
         <ProductsGallery />
         <HomeContent />
       </main>

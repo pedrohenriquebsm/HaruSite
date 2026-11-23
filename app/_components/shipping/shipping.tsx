@@ -73,7 +73,7 @@ export default function Shipping({ weight }: { weight: number }) {
   const [cep, setCep] = useState("");
   const [result, setResult] = useState<Result | null>(null);
 
-  const factor = weight === 2 ? 1.15 : weight === 3 ? 1.4 : 1;
+  const factor = weight === 2 ? 1.15 : weight === 4 ? 1.28 : weight === 3 ? 1.4 : 1;
 
   const ratesForUf = (uf: string): Rate[] => {
     const zone = UF_ZONE[uf] || "se";

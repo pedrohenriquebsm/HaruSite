@@ -3,33 +3,53 @@
 import Link from "next/link";
 import { useI18n } from "@/app/_lib/i18n";
 
-export default function HeaderNavButtons() {
+export default function HeaderNavButtons({ onItemClick }: { onItemClick?: () => void }) {
   const { t } = useI18n();
 
   return (
     <>
       <li>
-        <Link href={"/#store"} className="p-2">
+        <Link
+          href="/#loja"
+          onClick={onItemClick}
+          className="p-2 hover:text-olive-deep transition-colors"
+        >
           {t("nav.shop")}
         </Link>
       </li>
       <li>
-        <Link href={"/#brand"} className="p-2">
+        <Link
+          href="/#marca"
+          onClick={onItemClick}
+          className="p-2 hover:text-olive-deep transition-colors"
+        >
           {t("nav.brand")}
         </Link>
       </li>
       <li>
-        <Link href={"/microplastic"} className="p-2">
+        <Link
+          href="/microplastic"
+          onClick={onItemClick}
+          className="p-2 hover:text-olive-deep transition-colors"
+        >
           {t("nav.matter")}
         </Link>
       </li>
       <li>
-        <Link href={"/use-notes"} className="p-2">
+        <Link
+          href="/use-notes"
+          onClick={onItemClick}
+          className="p-2 hover:text-olive-deep transition-colors"
+        >
           {t("nav.use")}
         </Link>
       </li>
       <li>
-        <Link href={"/#contact"} className="p-2">
+        <Link
+          href="/#contato"
+          onClick={onItemClick}
+          className="p-2 hover:text-olive-deep transition-colors"
+        >
           {t("nav.contact")}
         </Link>
       </li>

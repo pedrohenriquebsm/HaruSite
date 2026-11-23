@@ -13,33 +13,35 @@ const ANSWERS = [
   "use.a6p1",
 ];
 
-/** Notas de uso (acordeão) da V6.0. */
 export default function UseNotesContent() {
   const { t } = useI18n();
 
   return (
-    <main id="main" tabIndex={-1}>
-      <section className="flex flex-col gap-5 text-text p-10 max-w-xl">
-        <LegalTitle subtitle={t("use.kicker")} title={t("use.h1")} />
-        <p className="font-light">{t("use.lead")}</p>
-        <div className="join join-vertical">
+    <main id="conteudo" className="max-w-4xl mx-auto px-6 md:px-12 py-16">
+      <section className="flex flex-col gap-8 text-text max-w-2xl">
+        <div className="reveal">
+          <LegalTitle subtitle={t("use.kicker")} title={t("use.h1")} />
+        </div>
+        <p className="reveal font-light text-base md:text-lg text-text/90 leading-relaxed">
+          {t("use.lead")}
+        </p>
+
+        <div className="flex flex-col gap-4 mt-4">
           {QUESTIONS.map((question, index) => (
-            <div
+            <details
               key={question}
-              className="collapse collapse-arrow join-item border-base-300 border"
+              className="reveal border border-black/10 rounded-lg p-5 bg-white/40 group open:bg-white/80 transition-colors"
             >
-              <input
-                type="radio"
-                name="use-notes-accordion"
-                defaultChecked={index === 0}
-              />
-              <div className="collapse-title font-semibold font-[Cormorant_Garamond_Variable] text-2xl">
-                {t(question)}
+              <summary className="font-[Cormorant_Garamond_Variable] text-2xl font-medium cursor-pointer list-none flex items-center justify-between text-olive-deep">
+                <span>{t(question)}</span>
+                <span className="text-xl text-muted font-mono transition-transform group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              <div className="pt-4 text-sm md:text-base font-light text-text/90 leading-relaxed border-t border-black/5 mt-3">
+                <p>{t(ANSWERS[index])}</p>
               </div>
-              <div className="collapse-content text-sm">
-                {t(ANSWERS[index])}
-              </div>
-            </div>
+            </details>
           ))}
         </div>
       </section>

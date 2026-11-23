@@ -2,7 +2,6 @@
 
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -49,7 +48,7 @@ function Hero() {
   const imgARef = useRef<HTMLDivElement>(null);
   const imgBRef = useRef<HTMLDivElement>(null);
   const brandRef = useRef<HTMLDivElement>(null);
-  const hintRef = useRef<HTMLParagraphElement>(null);
+  const hintRef = useRef<HTMLButtonElement>(null);
 
   useIsomorphicLayoutEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -152,20 +151,27 @@ function Hero() {
     };
   }, []);
 
+  const handleScrollDown = () => {
+    const lenis = (window as unknown as { haruLenis?: Lenis }).haruLenis;
+    const target = document.querySelector("#loja") as HTMLElement | null;
+    if (target) {
+      if (lenis) lenis.scrollTo(target, { offset: -72 });
+      else target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div ref={trackRef} className="hero-track relative">
       <section
         ref={rootRef}
-        className="hero-pin sticky top-0 w-full h-screen overflow-hidden"
+        onClick={(e) => {
+          if ((e.target as HTMLElement).closest("a, button, input")) return;
+          handleScrollDown();
+        }}
+        className="hero-pin sticky top-0 w-full h-screen overflow-hidden cursor-pointer"
         id="top"
         aria-label={t("hero.aria")}
       >
-        <Link
-          href="/#header"
-          className="absolute w-full h-screen z-[4]"
-          aria-label="Voltar para o topo"
-        />
-
         {/* Imagem A — base (bambu visto de baixo) */}
         <div
           ref={imgARef}
@@ -204,7 +210,7 @@ function Hero() {
         {/* Marca */}
         <div
           ref={brandRef}
-          className="absolute inset-0 z-[3] flex flex-col justify-center items-center text-center"
+          className="absolute inset-0 z-[3] flex flex-col justify-center items-center text-center select-none"
         >
           <div
             className="hero-enter"
@@ -216,7 +222,7 @@ function Hero() {
               width={587}
               height={695}
               loading="eager"
-              className="w-auto h-48 drop-shadow-lg"
+              className="w-auto h-48 sm:h-52 drop-shadow-xl"
             />
           </div>
           <h1
@@ -233,19 +239,24 @@ function Hero() {
           </p>
         </div>
 
-        {/* Arro de rolagem */}
-        <p
+        {/* Arro de rolagem (Desça) */}
+        <button
           ref={hintRef}
-          className="absolute bottom-16 w-full z-[2] flex flex-col items-center gap-1 text-white/90 drop-shadow-lg"
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleScrollDown();
+          }}
+          className="absolute bottom-12 w-full z-[4] flex flex-col items-center gap-1 text-white/90 drop-shadow-lg cursor-pointer hover:text-white transition-colors"
         >
           <span
-            className="text-xs uppercase tracking-[0.3em] hero-enter-fade"
+            className="text-xs uppercase tracking-[0.3em] font-light hero-enter-fade"
             style={{ animationDelay: "700ms" }}
           >
             {t("hero.hint")}
           </span>
-          <ArrowDown className="h-5 w-5 animate-bounce" />
-        </p>
+          <ArrowDown className="h-4 w-4 animate-bounce" />
+        </button>
       </section>
     </div>
   );

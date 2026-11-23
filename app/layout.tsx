@@ -4,6 +4,7 @@ import SmoothScroll from "./_components/smoothScroll/smoothScroll";
 import { I18nProvider } from "./_lib/i18n";
 import { CartProvider } from "./_components/cart/cartContext";
 import SkipLink from "./_components/skipLink/skipLink";
+import RevealObserver from "./_components/motion/revealObserver";
 import { asset } from "./_lib/assets";
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <I18nProvider>
           <CartProvider>
             <SkipLink />
+            <RevealObserver />
             <SmoothScroll>{children}</SmoothScroll>
           </CartProvider>
         </I18nProvider>

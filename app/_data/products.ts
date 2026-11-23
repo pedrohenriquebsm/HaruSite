@@ -8,7 +8,7 @@ import { asset } from "@/app/_lib/assets";
  */
 export interface ProductShape {
   slug: string;
-  prefix: "p1" | "p2" | "p3";
+  prefix: "p1" | "p2" | "p3" | "p4";
   price: number;
   /** Peso relativo usado no frete (mesmo `data-weight` do site antigo). */
   weight: number;
@@ -22,6 +22,7 @@ export interface SpecShape {
   value: string;
 }
 
+/** Coleção ativa na V6.2 (apenas escovas: individual, duo e casa de quatro). */
 export const PRODUCTS: ProductShape[] = [
   {
     slug: "escova",
@@ -48,6 +49,23 @@ export const PRODUCTS: ProductShape[] = [
     ],
   },
   {
+    slug: "kit-quatro",
+    prefix: "p4",
+    price: 168,
+    weight: 4,
+    gallery: [
+      asset("/background/product-casa-1.jpg"),
+      asset("/background/product-casa-2.jpg"),
+      asset("/background/product-casa-3.jpg"),
+      asset("/background/product-casa-4.jpg"),
+    ],
+  },
+];
+
+/** Todos os produtos incluindo os descontinuados mantidos para histórico/redirecionamento. */
+export const ALL_PRODUCTS: ProductShape[] = [
+  ...PRODUCTS,
+  {
     slug: "suporte",
     prefix: "p3",
     price: 62,
@@ -56,11 +74,12 @@ export const PRODUCTS: ProductShape[] = [
       asset("/background/product-suporte.jpg"),
       asset("/background/product-suporte-2.jpg"),
       asset("/background/product-suporte-3.jpg"),
+      asset("/background/product-suporte-4.jpg"),
     ],
   },
 ];
 
-/** Especificações na mesma ordem da página de produto da V6.0. */
+/** Especificações na mesma ordem da página de produto da V6.2. */
 export const SPECS: Record<string, SpecShape[]> = {
   escova: [
     { label: "spec.handle", value: "p1.handle" },
@@ -72,6 +91,11 @@ export const SPECS: Record<string, SpecShape[]> = {
     { label: "spec.bristle", value: "p2.bristle" },
     { label: "spec.care", value: "p2.care" },
   ],
+  "kit-quatro": [
+    { label: "spec.handle", value: "p4.handle" },
+    { label: "spec.bristle", value: "p4.bristle" },
+    { label: "spec.care", value: "p4.care" },
+  ],
   suporte: [
     { label: "spec.handle", value: "p3.handle" },
     { label: "spec.bristle", value: "p3.bristle" },
@@ -80,5 +104,5 @@ export const SPECS: Record<string, SpecShape[]> = {
 };
 
 export function getProduct(slug: string): ProductShape | undefined {
-  return PRODUCTS.find((p) => p.slug === slug);
+  return ALL_PRODUCTS.find((p) => p.slug === slug);
 }

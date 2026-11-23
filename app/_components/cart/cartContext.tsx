@@ -18,35 +18,72 @@ export interface CartLine {
   qty: number;
 }
 
+export type CheckoutStep = "email" | "code" | "address" | "pay" | "done";
+
+export interface CheckoutData {
+  email: string;
+  code: string;
+  verified: boolean;
+  cep: string;
+  street: string;
+  number: string;
+  complement: string;
+  district: string;
+  city: string;
+  uf: string;
+  service: "pac" | "sedex";
+  shippingPrice: number;
+  method: "pix" | "apple" | "card" | "boleto";
+}
+
 interface CartContextValue {
   items: CartLine[];
   count: number;
   total: number;
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+  view: "cart" | "check";
+  setView: (view: "cart" | "check") => void;
+  step: CheckoutStep;
+  setStep: (step: CheckoutStep) => void;
+  checkData: CheckoutData;
+  updateCheckData: (patch: Partial<CheckoutData>) => void;
   add: (product: ProductShape) => void;
   remove: (slug: string) => void;
   increase: (slug: string) => void;
   decrease: (slug: string) => void;
+  openCart: () => void;
+  openCheckout: (product?: ProductShape) => void;
 }
 
-const KEY = "haru-cart";
+const KEY_CART = "haru-cart";
+const KEY_CHECK = "haru-checkout";
 
-const CartContext = createContext<CartContextValue>({
-  items: [],
-  count: 0,
-  total: 0,
-  add: () => {},
-  remove: () => {},
-  increase: () => {},
-  decrease: () => {},
-});
+const DEFAULT_CHECK: CheckoutData = {
+  email: "",
+  code: "",
+  verified: false,
+  cep: "",
+  street: "",
+  number: "",
+  complement: "",
+  district: "",
+  city: "",
+  uf: "",
+  service: "pac",
+  shippingPrice: 0,
+  method: "pix",
+};
 
-function load(): CartLine[] {
+const CartContext = createContext<CartContextValue | null>(null);
+
+function loadCart(): CartLine[] {
+  if (typeof window === "undefined") return [];
   try {
-    const raw = window.localStorage.getItem(KEY);
+    const raw = window.localStorage.getItem(KEY_CART);
     if (!raw) return [];
     const parsed: unknown = JSON.parse(raw);
     if (Array.isArray(parsed)) {
-      // Descarta linhas de versões anteriores (com `name`) e dados inválidos.
       return (parsed as CartLine[])
         .filter(
           (line) =>
@@ -64,26 +101,68 @@ function load(): CartLine[] {
         }));
     }
   } catch {
-    /* storage bloqueado ou conteúdo inválido */
+    /* storage bloqueado */
   }
   return [];
 }
 
+function loadCheck(): CheckoutData {
+  if (typeof window === "undefined") return DEFAULT_CHECK;
+  try {
+    const raw = window.localStorage.getItem(KEY_CHECK);
+    if (!raw) return DEFAULT_CHECK;
+    const parsed = JSON.parse(raw);
+    return { ...DEFAULT_CHECK, ...parsed };
+  } catch {
+    return DEFAULT_CHECK;
+  }
+}
+
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartLine[]>([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [view, setView] = useState<"cart" | "check">("cart");
+  const [step, setStep] = useState<CheckoutStep>("email");
+  const [checkData, setCheckData] = useState<CheckoutData>(DEFAULT_CHECK);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- carrega a cesta salva depois da hidratação
-    setItems(load());
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setItems(loadCart());
+    setCheckData(loadCheck());
+  }, []);
+
+  // Sincroniza abas
+  useEffect(() => {
+    const onStorage = (event: StorageEvent) => {
+      if (event.key === KEY_CART) {
+        setItems(loadCart());
+      } else if (event.key === KEY_CHECK) {
+        setCheckData(loadCheck());
+      }
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
   }, []);
 
   useEffect(() => {
     try {
-      window.localStorage.setItem(KEY, JSON.stringify(items));
+      window.localStorage.setItem(KEY_CART, JSON.stringify(items));
     } catch {
       /* ignore */
     }
   }, [items]);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(KEY_CHECK, JSON.stringify(checkData));
+    } catch {
+      /* ignore */
+    }
+  }, [checkData]);
+
+  const updateCheckData = useCallback((patch: Partial<CheckoutData>) => {
+    setCheckData((prev) => ({ ...prev, ...patch }));
+  }, []);
 
   const add = useCallback((product: ProductShape) => {
     setItems((prev) => {
@@ -127,6 +206,29 @@ export function CartProvider({ children }: { children: ReactNode }) {
     );
   }, []);
 
+  const openCart = useCallback(() => {
+    setView("cart");
+    setIsOpen(true);
+  }, []);
+
+  const openCheckout = useCallback(
+    (product?: ProductShape) => {
+      if (product) {
+        add(product);
+      }
+      setView("check");
+      if (checkData.verified && checkData.email) {
+        setStep("address");
+      } else if (checkData.email) {
+        setStep("code");
+      } else {
+        setStep("email");
+      }
+      setIsOpen(true);
+    },
+    [add, checkData.email, checkData.verified],
+  );
+
   const { count, total } = useMemo(
     () => ({
       count: items.reduce((sum, l) => sum + l.qty, 0),
@@ -136,13 +238,48 @@ export function CartProvider({ children }: { children: ReactNode }) {
   );
 
   const value = useMemo(
-    () => ({ items, count, total, add, remove, increase, decrease }),
-    [items, count, total, add, remove, increase, decrease],
+    () => ({
+      items,
+      count,
+      total,
+      isOpen,
+      setIsOpen,
+      view,
+      setView,
+      step,
+      setStep,
+      checkData,
+      updateCheckData,
+      add,
+      remove,
+      increase,
+      decrease,
+      openCart,
+      openCheckout,
+    }),
+    [
+      items,
+      count,
+      total,
+      isOpen,
+      view,
+      step,
+      checkData,
+      updateCheckData,
+      add,
+      remove,
+      increase,
+      decrease,
+      openCart,
+      openCheckout,
+    ],
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
 
 export function useCart() {
-  return useContext(CartContext);
+  const ctx = useContext(CartContext);
+  if (!ctx) throw new Error("useCart must be used within CartProvider");
+  return ctx;
 }

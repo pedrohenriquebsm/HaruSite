@@ -1,50 +1,71 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import HeaderNavButtons from "./headerNavButtons";
-import { Menu } from "lucide-react";
 import ThemeToggle from "../theme/themeToggle";
 import LanguageToggle from "../languageToggle/languageToggle";
 import CartDrawer from "../cart/cartDrawer";
 
 export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header
-      className="sticky top-0 z-2  bg-ivory/85 backdrop-blur-md text-muted"
+      className="sticky top-0 z-40 bg-ivory/85 backdrop-blur-md border-b border-black/5 text-olive-deep transition-colors"
       id="header"
     >
-      <nav className="navbar relative py-0 px-10 flex justify-between md:justify-around flex-wrap">
+      <nav className="max-w-7xl mx-auto px-6 md:px-12 h-18 flex items-center justify-between">
+        {/* Marca HARU */}
         <Link
-          href={"/#top"}
-          className="font-[Cormorant_Garamond_Variable] text-xl tracking-widest font-bold p-2"
+          href="/#top"
+          className="font-[Cormorant_Garamond_Variable] text-2xl font-bold tracking-[0.2em] py-2 text-olive-deep hover:opacity-80 transition-opacity"
         >
           HARU
         </Link>
 
-        <ul className="text-xs uppercase tracking-widest gap-10 justify-end hidden md:flex items-center flex-nowrap text-nowrap">
-          <li>
-            <div className="flex items-center gap-1">
-              <CartDrawer />
-              <LanguageToggle />
-              <ThemeToggle />
-            </div>
-          </li>
-          <HeaderNavButtons />
-        </ul>
-        <span className="md:hidden">
-          <details className="dropdown static">
-            <summary className="btn btn-ghost active:bg-transparent focus:bg-transparent focus:border-0 hover:bg-transparent hover:border-0">
-              <Menu />
-            </summary>
-            <ul className="menu dropdown-content absolute inset-x-0 w-full top-full gap-2 z-1 shadow-sm p-2 text-xs uppercase bg-ivory tracking-widest">
-              <li className="flex items-center justify-center gap-1 pb-2">
-                <CartDrawer id="cart-drawer-mobile" />
-                <LanguageToggle />
-                <ThemeToggle />
-              </li>
-              <HeaderNavButtons />
-            </ul>
-          </details>
-        </span>
+        {/* Direita: Desktop */}
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="text-xs uppercase tracking-widest gap-8 flex items-center text-muted font-light">
+            <HeaderNavButtons />
+          </ul>
+
+          <div className="flex items-center gap-1 border-l border-black/10 pl-6">
+            <ThemeToggle />
+            <LanguageToggle showLabel={false} />
+            <CartDrawer id="cart-drawer-desktop" />
+          </div>
+        </div>
+
+        {/* Direita: Mobile */}
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <CartDrawer id="cart-drawer-mobile" />
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="btn btn-ghost btn-sm p-2 text-olive-deep ml-1"
+            aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </nav>
+
+      {/* Menu Dropdown Mobile */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-black/5 bg-ivory/95 px-6 py-6 shadow-lg animate-in slide-in-from-top-2 duration-200">
+          <ul className="flex flex-col gap-4 text-xs uppercase tracking-widest text-muted font-light">
+            <HeaderNavButtons onItemClick={() => setMobileMenuOpen(false)} />
+          </ul>
+          <div className="border-t border-black/5 mt-5 pt-4 flex items-center justify-between">
+            <span className="text-xs text-muted uppercase tracking-wider font-light">Idioma</span>
+            <LanguageToggle />
+          </div>
+        </div>
+      )}
     </header>
   );
 }

@@ -26,6 +26,8 @@
   --h-forest: #1a2418;
   --h-text: #2c3328;
   --h-muted: #6b7264;
+  --theme-time: 0.85s;
+  --theme-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html[data-theme="kraft"] {
@@ -52,6 +54,27 @@ body {
   font-family: 'Outfit Variable', sans-serif;
   color: var(--h-text);
   background-color: var(--h-ivory);
+  transition: background-color var(--theme-time) var(--theme-ease),
+    color var(--theme-time) var(--theme-ease);
+}
+
+/* ——— GSAP Reveal Animations ——— */
+.reveal {
+  opacity: 1;
+}
+
+html.js-motion .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  html.js-motion .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 .theme-toggle__sun {
